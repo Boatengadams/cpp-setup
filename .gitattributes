@@ -1,0 +1,14 @@
+# Windows batch files must keep CRLF endings: cmd.exe mis-parses goto/label
+# blocks when the file only has LF.
+*.bat text eol=crlf
+*.cmd text eol=crlf
+
+# Shell and Python sources stay LF.
+*.sh  text eol=lf
+cpp.py text eol=lf
+lib/*.py text eol=lf
+tests/*.py text eol=lf
+*.md   text eol=lf
+.gitignore      text eol=lf
+.gitattributes  text eol=lf
+LICENSE         text eol=lf

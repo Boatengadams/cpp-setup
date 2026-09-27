@@ -1,0 +1,27 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+
+# Test / coverage
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Editors and OS noise
+.vscode/
+.idea/
+*.swp
+.DS_Store
+Thumbs.db
+
+# Build output from the verification program
+cpp_environment_check
+cpp_environment_check.exe
+mingw_cross_compile_check.exe
+*.o
+*.obj
+*.exe
+!cpp.bat
