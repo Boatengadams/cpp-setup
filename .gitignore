@@ -25,3 +25,6 @@ mingw_cross_compile_check.exe
 *.obj
 *.exe
 !cpp.bat
+
+# Local tool scratch output
+brag-output-*/

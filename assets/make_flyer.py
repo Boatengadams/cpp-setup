@@ -96,7 +96,7 @@ def main() -> None:
     d.rounded_rectangle([MARGIN, y, W - MARGIN, y + card_h], radius=28, fill=WHITE, outline=BORDER, width=3)
     d.text((MARGIN + 70, y + 44), "GET STARTED IN 3 STEPS", font=font(BOLD, 54), fill=BLUE)
     steps = [
-        "git clone https://github.com/BAGSGRAPHICS/cpp-setup.git",
+        "git clone https://github.com/boatengadams/cpp-setup.git",
         "cd cpp-setup  &&  ./install.sh   (Windows: install.bat)",
         "cpp",
     ]
@@ -158,7 +158,7 @@ def main() -> None:
 
     # ---------------- footer ----------------
     d.line([(MARGIN, footer_top), (W - MARGIN, footer_top)], fill=BORDER, width=4)
-    d.text((MARGIN, footer_top + 46), "github.com/BAGSGRAPHICS/cpp-setup", font=font(BOLD, 50), fill=BLUE)
+    d.text((MARGIN, footer_top + 46), "github.com/boatengadams/cpp-setup", font=font(BOLD, 50), fill=BLUE)
     d.text((MARGIN, footer_top + 122), "MIT License  •  BAGSGRAPHICS", font=font(REG, 38), fill=GREY)
 
     img.save(OUT, "PNG", dpi=(300, 300))
@@ -168,3 +168,5 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
+    
+    
