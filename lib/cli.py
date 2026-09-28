@@ -108,7 +108,7 @@ def _run_uninstall(console, paths, assume_yes: bool = False) -> int:
         return 1
 
 
-def _run_test(console, paths) -> int:
+def _run_test(console, paths, name: str = "") -> int:
     from . import compiler as compiler_mod
 
     found = compiler_mod.detect()
@@ -117,7 +117,8 @@ def _run_test(console, paths) -> int:
         return 1
     console.info("using %s (%s)" % (found.exe, found.version))
     try:
-        result = verify.verify(found.exe, paths.workspace, _ask_name(console), console=console, force_rewrite=True)
+        result = verify.verify(found.exe, paths.workspace, name or _ask_name(console),
+                               console=console, force_rewrite=True)
     except verify.VerifyError as exc:
         console.error(str(exc))
         return 1
@@ -166,7 +167,7 @@ def _main(argv: Optional[List[str]] = None) -> int:
     if args.uninstall:
         return _run_uninstall(console, paths, assume_yes=args.yes)
     if args.run_test:
-        return _run_test(console, paths)
+        return _run_test(console, paths, name=args.name)
 
     known = set(state.STEP_INDEX)
     for flag, value in (("--force", args.force), ("--only", args.only)):
