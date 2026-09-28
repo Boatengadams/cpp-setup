@@ -25,7 +25,7 @@ for your name.
 ## Quick start
 
 ```bash
-git clone https://github.com/boatengadams/cpp-setup.git
+git clone https://github.com/Boatengadams/cpp-setup.git
 cd cpp-setup
 
 # --- Linux, macOS, WSL, Git Bash, MSYS2 ---
@@ -347,7 +347,7 @@ This project is maintained by a single contributor.
 | | |
 |---|---|
 | **Author and maintainer** | **BAGSGRAPHICS** (`boatengadams4g@gmail.com`) |
-| Repository | `https://github.com/boatengadams/cpp-setup` |
+| Repository | `https://github.com/Boatengadams/cpp-setup` |
 
 Issues and pull requests are welcome. Before opening a pull request, please run
 the test suite:
