@@ -22,6 +22,60 @@ for your name.
 
 ---
 
+## Demo
+
+*Watch it work (2 min).*
+
+> One command. Real C++. This is a real run — platform check, compiler found,
+> verified in a brand-new shell, C++20 program compiled, output asserted.
+
+<p align="center">
+  <a href="brag/presentation.mp4">
+    <img src="brag/05-verify.png" alt="Play the 2-min desktop walkthrough: cpp setup finding the compiler, building C++20, verifying the Congratulations output" width="800">
+  </a>
+  <br>
+  <sub><b>▶ Desktop / landscape — <a href="brag/presentation.mp4"><code>presentation.mp4</code> (2:00, 1920x1080, ~56 MB)</a></b> — click the thumbnail to play<br>Full story: <i>Finds your compiler → Compiles real C++20 → It checks the answer — not the exit code → Resumable. Verified. 1.5s.</i></sub>
+</p>
+
+<p align="center">
+  <a href="brag/social.mp4">
+    <img src="brag/0069.png" alt="Play the vertical cut: final report with Congratulations Ada, gcc 15.3, setup finished" width="320">
+  </a>
+  <br>
+  <sub><b>▶ Mobile / portrait — <a href="brag/social.mp4"><code>social.mp4</code> (2:00, 1080x1920, ~55 MB)</a></b> — click to play<br>Same demo, vertical cut for phones and social feeds.</sub>
+</p>
+
+> **How playback works:** GitHub READMEs don't run inline `<video>` players from
+> repo-relative paths, so the thumbnails above are **click-to-play links** to the
+> mp4s — that pattern plays everywhere (web, app, mobile).
+> Open directly: [`brag/presentation.mp4`](brag/presentation.mp4) (desktop) ·
+> [`brag/social.mp4`](brag/social.mp4) (mobile).
+> _Note: the two mp4s (~110 MB together) are stored with [Git LFS](https://git-lfs.com) rather
+> than as git objects. `git clone` downloads them only when Git LFS is active — run
+> `git lfs install` once before cloning, or set `GIT_LFS_SKIP_SMUDGE=1` to keep the clone light
+> and leave the videos as tiny pointer files. The screenshots below are ordinary files and
+> always render._
+
+### Screenshots — real terminal output
+
+<p align="center">
+  <a href="brag/05-verify.png">
+    <img src="brag/05-verify.png" alt="cpp setup early steps: preflight, compiler auto-detected as /usr/bin/g++ 15.3.0, verified globally in a new shell, verification program created" width="800">
+  </a>
+  <br>
+  <sub><b>Setup in progress</b> — <a href="brag/05-verify.png"><code>brag/05-verify.png</code></a>: [1/6] Preflight → [2/6] Detect (/usr/bin/g++ Debian 15.3.0-2) → [3/6] Verify globally in a new shell → [4/6] Create and build cpp_environment_check.cpp</sub>
+</p>
+
+<p align="center">
+  <a href="brag/0069.png">
+    <img src="brag/0069.png" alt="cpp setup final report: toolchain check gcc 15.3, C++20, Linux, Congratulations Ada, setup finished in 1.5s" width="800">
+  </a>
+  <br>
+  <sub><b>It checks the answer — not the exit code</b> — <a href="brag/0069.png"><code>brag/0069.png</code></a>: [6/6] Final report, compiler gcc 15.3 / standard 202002 (2020) / platform Linux, then Congratulations Ada! — Setup finished in 1.5s</sub>
+</p>
+
+---
+
 ## Quick start
 
 ```bash
@@ -71,7 +125,8 @@ That is it. `cpp` installs everything and prints your personalised result:
 | `lib/` | all | the setup engine (Python 3, standard library only) |
 | `tests/` | all | the unit test suite (no network required) |
 | `assets/` | all | the print-ready flyer shown at the top of this page, plus the script that renders it |
-| `.gitattributes` | all | keeps `.bat` files CRLF so `cmd.exe` parses them correctly |
+| `brag/` | all | demo media used in [Demo](#demo): `presentation.mp4` (desktop 1920x1080) and `social.mp4` (mobile 1080x1920), both stored in Git LFS, plus `05-verify.png` (setup in progress) and `0069.png` (final report) |
+| `.gitattributes` | all | keeps `.bat` files CRLF so `cmd.exe` parses them correctly, and routes `*.mp4` to Git LFS |
 
 **`cpp.bat` is the launcher for Windows and `cpp.sh` is the launcher for
 everything else.** Both are thin wrappers with identical behaviour: they locate a
