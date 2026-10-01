@@ -28,3 +28,8 @@ mingw_cross_compile_check.exe
 
 # Local tool scratch output
 brag-output-*/
+
+# Editor / agent scratch directories
+.kilo/
+.claude/
+.continue/

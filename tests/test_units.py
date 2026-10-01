@@ -13,6 +13,7 @@ import sys
 import tempfile
 import unittest
 from pathlib import Path
+from unittest import mock
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
@@ -513,7 +514,11 @@ class TestUi(unittest.TestCase):
 
     def test_ask_uses_the_default_without_input(self):
         console = ui.Console(stream=io.StringIO(), no_color=True)
-        self.assertEqual(console.ask("Name?", default="Coder"), "Coder")
+        # ask() reads sys.stdin, so feed it an explicit empty stream. Relying on
+        # the real stdin reaching EOF only works under `pytest -s`; under normal
+        # output capture pytest swaps stdin for a stub that raises OSError.
+        with mock.patch("sys.stdin", io.StringIO("")):
+            self.assertEqual(console.ask("Name?", default="Coder"), "Coder")
 
     def test_strip_ansi_removes_colour_codes(self):
         self.assertEqual(ui.strip_ansi("\033[32mgreen\033[0m"), "green")
